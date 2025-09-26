@@ -5,63 +5,165 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Carrier Bag of HCI Workshop</title>
     <link href="./img/favicon.png" rel="icon">
-  <script type="module" crossorigin src="./assets/index-XaXn6QDK.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-yky5wc5C.css">
+  <script type="module" crossorigin src="./assets/index-D7wUPzmh.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C6K4SO2U.css">
 </head>
 
 <body>
-<main class="bg-white min-h-screen">
-    <div class="grid grid-cols-3 gap-1.5 p-1.5">
+<main class="pattern-vertical-lines pattern-white pattern-bg-offWhite pattern-opacity-100 bg-offWhite pattern-size-4 min-h-screen">
+    <div class="grid grid-cols-1 sm:grid-cols-3 2xl:grid-cols-6 gap-1.5 p-1.5">
 
-        <div class="pattern-dots pattern-pastelRed pattern-bg-pastelRedDark pattern-opacity-100 pattern-size-42 aspect-square bg-pastelRed flex items-center justify-center">
-            <div class="flex w-[95%] aspect-square border-pastelYellow border-4 border-dashed rounded-xl items-center justify-center">
-                <p class="font-needle text-[8rem] text-pastelBlueLight">Test</p>
+        <!-- The Bag -->
+        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+             x-data="{ flipped: false }">
+
+            <!-- Front -->
+            <div class="w-full pattern-dots pattern-pastelRed pattern-bg-pastelRedDark pattern-opacity-100 pattern-size-32 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
+                 x-show="!flipped">
+                <div class="flex w-[95%] aspect-square border-pastelYellow border-4 border-dashed rounded-xl items-center justify-center text-center">
+                    <p class="font-needle text-[5rem] sm:text-[4rem] md:text-[5rem] text-pastelBlueExtraLight pointer-events-none select-none">
+                        The
+                        Bag</p>
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="w-full bg-pastelRedDark aspect-square flex items-center justify-center rounded-sm"
+                 x-show="flipped">
+                <div class="flex w-[95%] aspect-square border-pastelYellow border-4 border-dashed rounded-xl items-center text-start">
+                    <p class="p-4 font-bold text-[2rem] sm:text-[0.9rem] md:text-[1.2rem] lg:text-[1.8rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-pastelBlueExtraLight pointer-events-none select-none">
+                        Drawing on Le Guin, we offer a Carrier Bag Theory of HCI as a figuration for a slow disciplinary
+                        reorientation.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div class="aspect-square flex items-center justify-center"></div>
+        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
 
-        <div class="aspect-square bg-pastelGreen flex items-center justify-center">
-            <div class="flex w-[95%] aspect-square border-pastelPurple border-4 border-dashed rounded-xl items-center justify-center">
-                <p class="font-home text-[8rem] text-white">Test</p>
+        <!-- Team -->
+        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+             x-data="{ flipped: false }">
+
+            <!-- Front -->
+            <div class="w-full pattern-lines pattern-pastelGreen pattern-bg-pastelGreenDark pattern-opacity-100 pattern-size-12 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
+                 x-show="!flipped">
+                <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center justify-center text-center">
+                    <p class="font-home  text-[7rem] sm:text-[3rem] md:text-[5rem] lg:text-[4rem] xl:text-[4.5rem] text-white pointer-events-none select-none">
+                        Team</p>
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="w-full bg-pastelGreenDark aspect-square flex items-center justify-center rounded-sm"
+                 x-show="flipped">
+                <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center text-start">
+                    <p class="p-4 font-bold text-[2rem] sm:text-[0.9rem] md:text-[1.2rem] lg:text-[1.8rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-white pointer-events-none select-none">
+                        Lea Stoeter,<br>
+                        Konstantin Lackner,<br>
+                        Goda Klumbyte,<br>
+                        Viktoria Horn,<br>
+                        Claude Draude,<br>
+                        Lisa Blaesing</p>
+                </div>
             </div>
         </div>
 
-        <div class="aspect-square bg-pastelPurple flex items-center justify-center">
-            <div class="flex w-[95%] aspect-square border-pastelBlueLight border-4 border-dashed rounded-xl items-center justify-center">
-                <p class="font-stitch text-[8rem] text-pastelYellow">Test</p>
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <!-- Where & When -->
+        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+             x-data="{ flipped: false }">
+
+            <!-- Front -->
+            <div class="w-full pattern-rhombus pattern-pastelPurple pattern-bg-pastelPurpleLight pattern-opacity-100 pattern-size-24 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
+                 x-show="!flipped">
+                <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center justify-center text-center">
+                    <p class="font-stitch text-[5rem] sm:text-[2.5rem] md:text-[3.5rem] text-pastelYellow pointer-events-none select-none">
+                        Where &
+                        When</p>
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="w-full bg-pastelPurpleLight aspect-square flex items-center justify-center rounded-sm"
+                 x-show="flipped">
+                <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center text-start">
+                    <p class="p-4 font-bold text-[2.5rem] text-pastelRedDark pointer-events-none select-none">
+                        Location and Timeslot</p>
+                </div>
             </div>
         </div>
 
-        <div class="aspect-square bg-pastelBlueLight flex items-center justify-center">
-            <div class="flex w-[95%] aspect-square border-pastelBlueDark border-4 border-dashed rounded-xl items-center justify-center">
-                <p class="font-dashed font-bold text-[8rem] text-pastelBlueDark">Test</p>
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <!-- Join -->
+        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+             x-data="{ flipped: false }">
+
+            <!-- Front -->
+            <div class="w-full pattern-vertical-lines pattern-pastelBlueExtraLight pattern-bg-pastelBlueLight pattern-opacity-100 pattern-size-8 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
+                 x-show="!flipped">
+                <div class="flex w-[95%] aspect-square border-pastelBlueDark border-4 border-dashed rounded-xl items-center justify-center text-center">
+                    <p class="font-dashed text-[8rem] sm:text-[5rem] md:text-[7rem] text-pastelBlueDark pointer-events-none select-none">
+                        Join</p>
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="w-full bg-pastelBlueExtraLight aspect-square flex items-center justify-center rounded-sm"
+                 x-show="flipped">
+                <div class="flex w-[95%] aspect-square border-pastelBlueDark border-4 border-dashed rounded-xl items-center text-center">
+                    <p class="p-4 font-bold text-[2.5rem] text-pastelBlueDark pointer-events-none select-none">Should
+                        be mailto</p>
+                </div>
             </div>
         </div>
 
-        <div class="aspect-square flex items-center justify-center"></div>
+        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
 
-        <div class="aspect-square flex items-center justify-center"></div>
+        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
 
-        <div class="aspect-square bg-pastelYellow flex items-center justify-center">
-            <div class="flex w-[95%] aspect-square border-white border-4 border-dashed rounded-xl items-center justify-center">
-                <p class="font-needle text-[8rem] text-pastelRed">Test</p>
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
+
+        <!-- About -->
+        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+             x-data="{ flipped: false }">
+
+            <!-- Front -->
+            <div class="w-full pattern-cross pattern-pastelGreenDark pattern-bg-pastelYellow pattern-opacity-100 pattern-size-8 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
+                 x-show="!flipped">
+                <div class="flex w-[95%] aspect-square border-white border-4 border-dashed rounded-xl items-center justify-center text-center">
+                    <p class="font-needle text-[6.5rem] sm:text-[3.5rem] md:text-[4.5rem] text-pastelRed pointer-events-none select-none">
+                        About</p>
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="w-full bg-pastelYellow aspect-square flex items-center justify-center rounded-sm"
+                 x-show="flipped">
+                <div class="flex w-[95%] aspect-square border-white border-4 border-dashed rounded-xl items-center text-start">
+                    <p class="p-4 font-bold text-[1.5rem] text-pastelRed pointer-events-none select-none">
+                        Particpatory IT Design,<br>
+                        University of Kassel,<br>
+                        Germany</p>
+                </div>
             </div>
         </div>
     </div>
-
 </main>
-
-<footer class="bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue w-full h-40 p-4 flex items-center justify-center">
-    <div class="flex flex-col justify-between items-start text-white text-left w-96">
-        <p>This website was created with <a class="hover:underline" href="https://tailwindcss.com/">tailwindcss</a> and
-            <a
-                    class="hover:underline" href="https://alpinejs.dev/">Alpine.js</a>
-            and is hosted on <a class="hover:underline" href="https://pages.github.com/">GitHub Pages</a></p>
-        <p>Email: <a class="text-lightBlue hover:underline"
-                     href="mailto:konstantin.lackner@uni-kassel.de">konstantin.lackner@uni-kassel.de</a></p>
-    </div>
-</footer>
 </body>
 
 </html>
