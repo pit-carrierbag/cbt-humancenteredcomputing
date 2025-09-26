@@ -8,3 +8,45 @@
     font-weight: 100 900;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'HomeSweetHome';
+    src: url('../public/typefaces/HomeSweetHome.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeedleWorkPerfect';
+    src: url('../public/typefaces/NeedleworkPerfect.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../public/typefaces/Quicksand_Dash.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SuperStitch';
+    src: url('../public/typefaces/SuperStitch-Regular.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PWDottedFont';
+    src: url('../public/typefaces/PWDottedFont.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PiS_stutter';
+    src: url('../public/typefaces/PiS_stutter.otf') format('opentype');
+    font-weight: 100 900;
+    font-style: normal;
+}
