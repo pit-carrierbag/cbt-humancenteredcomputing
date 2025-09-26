@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstantin Lackner</title>
+    <link rel="icon" href="./img/favicon.png">
+  <script type="module" crossorigin src="./assets/main-Bg_Rx6rS.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DnCiElUi.css">
+</head>
+
+<body class="bg-white dark:bg-veryDarkGrey text-center">
+
+<header class="flex sm:hidden justify-between items-center bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue fixed top-0 left-0 w-full h-header-spacer-mobile sm:inset-header-spacer z-50 pt-1 px-1">
+    <img src="./img/BigSock.png" alt="Konstantin Lackner sock logo - depicting Konstantin Lackner as a sock puppet"
+         class="block md:hidden w-auto h-full px-4">
+
+    <div aria-label="burger menu for mobile navigation" x-data="{ open: false }" class="relative">
+        <button aria-label="opens the burger menu for mobile navigation" @click="open = !open"
+                class="flex justify-center rounded focus:outline-none focus:ring px-1">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke="white">
+                <path :class="{'rotate-48 -translate-x-1 translate-y-1': open, 'translate-y-0': !open}"
+                      class="transition-transform transform origin-center" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-width="2" d="M4 6h16"/>
+                <path :class="{'opacity-0': open, 'opacity-100': !open}" class="transition-opacity"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"/>
+                <path :class="{'-rotate-48 -translate-x-1 -translate-y-1': open, 'translate-y-0': !open}"
+                      class="transition-transform transform origin-center" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-width="2" d="M4 18h16"/>
+            </svg>
+        </button>
+
+        <div x-show="open"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 transform translate-x-full"
+             x-transition:enter-end="opacity-100 transform translate-x-0"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100 transform translate-x-0"
+             x-transition:leave-end="opacity-0 transform translate-x-full"
+             class="fixed right-0 w-screen bg-gradient-to-l from-eyeBlue to-eyeGreen dark:from-darkBlue dark:to-darkGreen z-40 flex flex-col items-start justify-start text-left font-bold py-4 px-2 top-header-spacer-mobile h-[calc(100vh-3rem)]"
+             x-cloak
+             @click.away="open = false">
+
+        <div class="text-center">
+                <a aria-label="jump link to research section" href="#research" @click="open = false"
+                   class="block px-4 py-4 text-3xl text-white text-left hover:bg-gray-100">Research</a>
+                <a aria-label="jump link to game design section" href="#gameDesign" @click="open = false"
+                   class="block px-4 py-4 text-3xl text-white text-left hover:bg-gray-100">Game Design</a>
+                <a aria-label="jump link to reflections on academia section" href="#reflectionsOnAcademia" @click="open = false"
+                   class="block px-4 py-4 text-3xl text-white text-left hover:bg-gray-100">Reflections on Academia</a>
+                <a aria-label="jump link to contact section" href="#contact" @click="open = false"
+                   class="block px-4 py-4 text-3xl text-white text-left hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section aria-label="spacer"
+         class="flex sm:hidden h-header-spacer-mobile bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue"></section>
+<!-- Doing a calculation so that the height of the greeting message is taking into account that part of the screen is covered by the header -->
+<section aria-label="greeting message" class="sm:pt-0 h-[calc(100vh-3rem)] sm:h-screen">
+    <div class="mx-auto bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue lg:pt-8 pt-0 sm:pb-0 h-full">
+        <div class="px-8 sm:px-16 flex flex-col sm:flex-row sm:items-stretch justify-between h-full">
+
+            <!-- Text area -->
+            <div class="w-full sm:w-4/6 flex flex-col justify-center sm:pl-6">
+                <h1 class="text-4xl lg:text-6xl xl:text-8xl font-thin text-left text-white pt-10 sm-pt-0">Konstantin Lackner</h1>
+                <p class="text-base lg:text-lg xl:text-3xl text-gray-800 text-left text-white font-light sm:text-lightBlue">
+                    Research, Game Design and Reflections on Academia
+                </p>
+            </div>
+
+            <!-- Image area -->
+            <div class="w-full sm:w-2/6 flex items-end sm:pr-6">
+                <img alt="Konstantin Lackner sock logo - depicting Konstantin Lackner as a sock puppet" src="./img/BigSock.png" class="w-full object-contain">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section aria-label="spacer" class="flex h-small-header-spacer-mobile sm:h-small-header-spacer"></section>
+
+<nav aria-label="jump links for quicker navigation"
+     class="sticky top-0 z-10 bg-white hidden sm:block pt-2 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:justify-between justify-start sm:space-x-6 mb-6">
+            <a aria-label="jump link to research section"
+               href="#research"
+               class="text-base lg:text-lg font-normal text-eyeGreen text-left hover:text-darkGreen dark:text-darkModeLightBlue dark:hover:text-white !important transition-colors duration-300">↓
+                Research</a>
+            <a aria-label="jump link to game design section"
+               href="#gameDesign"
+               class="text-base lg:text-lg font-normal text-eGToEBStep1 hover:text-darkGreen dark:text-darkModeLightBlue dark:hover:text-white text-left transition-colors duration-300">↓
+                Game Design</a>
+            <a aria-label="jump link to reflections on academia section"
+               href="#reflectionsOnAcademia"
+               class="text-base lg:text-lg font-normal text-eGToEBStep2 hover:text-darkBlue dark:text-darkModeLightBlue dark:hover:text-white text-left transition-colors duration-300">↓
+                Reflections on Academia</a>
+            <a aria-label="jump link to contact section"
+               href="#contact"
+               class="text-base lg:text-lg font-normal text-eyeBlue hover:text-darkBlue dark:text-darkModeLightBlue dark:hover:text-white text-left transition-colors duration-300">↓
+                Contact</a>
+        </div>
+        <div class="h-[1px] w-full bg-gradient-to-r from-eyeGreen to-eyeBlue"></div>
+    </div>
+</nav>
+
+<main>
+    <section id="research" aria-label="research section"
+             class="px-4 sm:px-6 pb-20 sm:scroll-mt-desktop-header pt-16">
+        <div class="pt-10 md:pt-0 max-w-4xl mx-auto text-left">
+            <h2 class="text-eyeGreen dark:text-white text-4xl mb-6 text-left">Research</h2>
+            <p class="p-1 w-full dark:text-white">I am currently pursuing my PhD at the
+                <a href="https://www.uni-kassel.de/eecs/en/pit/team/konstantin-lackner"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-eyeGreen hover:underline"
+                >Participatory IT Design group at the University of Kassel.</a><br>
+                There I am part of the research project <a
+                        href="https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/demokratie-x"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-eyeGreen hover:underline">Demokratie-X</a>, which aims to analyse the
+                sustainability
+                of a privacy-focused, fair and public-interest-oriented platform for news distribution.
+                My research interests, in the context of my doctorate, revolve around the relationships between
+                people
+                and digital technologies. Especially interactions with AI (I passionately scorn this term) are
+                what
+                frequently make me frown.</p>
+            <div class="md:flex md:justify-between mx-auto pt-10 text-left">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-eyeGreen dark:text-white text-2xl mb-6">Academic CV</h3>
+
+                    <!--Table-->
+                    <div class="border border-eyeGreen dark:border-darkGreen max-w-2xl divide-y divide-white md:m-4">
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-6">
+                            <div class="bg-eyeGreen dark:bg-darkGreen text-white text-s lg:text-base font-semibold text-center px-0.5 py-2">
+                                2021
+                            </div>
+                            <div class="col-span-5 px-4 py-2">
+                                <div class="font-semibold dark:text-white">
+                                    Erasmus stay Universitetet I Bergen & first Bachelor's thesis
+                                </div>
+                                <div class="italic text-sm dark:text-white">
+                                    ‘Integrating GPU-based fluid simulation with Metaball rendering’
+                                </div>
+                                <a href="./documents/Integrating_GPU-based_fluid_simulation_with_Metaball_rendering_Bachelor's_Thesis_Konstantin_Lackner.pdf"
+                                   download
+                                   class="text-eyeGreen font-bold text-sm hover:underline">download ↓</a>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-6">
+                            <div class="bg-eyeGreen dark:bg-darkGreen text-white text-s lg:text-base font-semibold text-center px-0.5 py-2">
+                                2022
+                            </div>
+                            <div class="col-span-5 px-4 py-2">
+                                <div class="font-semibold dark:text-white">
+                                    Second Bachelor's (Media Informatics and Visual Computing) thesis at TU Vienna →
+                                    completed Bachelor's degree
+                                </div>
+                                <div class="italic text-sm dark:text-white">
+                                    ‘Aiding Novice Programmers’ understanding of program flow by introducing sequential
+                                    visualisation of graphical output and real-time visual debugging – a case study’
+                                </div>
+                                <a href="./documents/Aiding_Novice_Programmers’_understanding_of_program_flow_by_introducing_sequential_visualisation_of_graphical_output_and_real-time_visual_debugging-a_case_study+study.pdf"
+                                   download
+                                   class="text-eyeGreen font-bold text-sm hover:underline">download ↓</a>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="grid grid-cols-6">
+                            <div class="bg-eyeGreen dark:bg-darkGreen text-white text-s lg:text-base font-semibold text-center px-0.5 py-2">
+                                2024
+                            </div>
+                            <div class="col-span-5 px-4 py-2">
+                                <div class="font-semibold dark:text-white">
+                                    Master's (Media and Human-Centred Computing) thesis at TU Vienna
+                                </div>
+                                <div class="text-sm dark:text-white">
+                                    <div class="italic">
+                                        ‘Higher Education in the Times of ChatGPT’
+                                    </div>
+                                    <div>
+                                        within the internally funding dCall project
+                                        at TU Vienna exploring the possibilities as well as
+                                        dangers of ChatGPT in education
+                                    </div>
+                                    <a
+                                            href="./documents/Higher_Education_In_The_Times_Of_ChatGPT_Konstantin_Lackner_11716989_compressed.pdf"
+                                            download
+                                            class="text-eyeGreen text-sm font-bold hover:underline">download ↓</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="grid grid-cols-6">
+                            <div class="bg-eyeGreen dark:bg-darkGreen text-white text-s lg:text-base font-semibold text-center px-0.5 py-2">
+                                2024
+                            </div>
+                            <div class="col-span-5 px-4 py-2">
+                                <div class="font-semibold dark:text-white">
+                                    Started PhD Paris Lodron University Salzburg
+                                </div>
+                                <div class="text-sm dark:text-white">
+                                    Artificial Intelligence and Human Interfaces Group within the EXDIGIT project
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Row 5 -->
+                        <div class="grid grid-cols-6">
+                            <div class="bg-eyeGreen dark:bg-darkGreen text-white text-s lg:text-base font-semibold text-center px-0.5 py-2">
+                                2024 -
+                                date
+                            </div>
+                            <div class="col-span-5 px-4 py-2">
+                                <div class="font-semibold dark:text-white">
+                                    Started PhD University of Kassel
+                                </div>
+                                <div class="text-sm dark:text-white">
+                                    Within the Bundesministerium für Bildung und Forschung -funded Demokratie-X project
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-10 md:pt-0 w-full md:w-1/2">
+                    <h3 class="text-eyeGreen dark:text-white text-2xl mb-6">Academic Services</h3>
+                    <ul class="list-disc pl-5 text-left text-black dark:text-white pt-2">
+                        <li>Full Paper AC 1 and 2 for <a
+                                href="https://muc2025.mensch-und-computer.de/de/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-eyeGreen hover:underline">Mensch und Computer 2025</a></li>
+                        <li>Tool Chair for Mensch und Computer 2025</li>
+                    </ul>
+                    <ul class="list-disc pl-5 pt-4 text-left text-black dark:text-white">
+                        <li>Reviewer for Oxford University Press' <a
+                                href="https://academic.oup.com/iwc"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-eyeGreen hover:underline">Interacting with Computers</a></li>
+                        <li>Reviewer for <a
+                                href="https://interact2025.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-eyeGreen hover:underline"
+                        >INTERACT 2025</a></li>
+                    </ul>
+                    <ul class="list-disc pl-5 pt-4 text-left text-black dark:text-white">
+                        <li>Helped develop a course on the basics of generative AI for <a
+                                href="https://www.moz.ac.at/en"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-eyeGreen hover:underline">Mozarteum Salzburg</a></li>
+                        <li>Guest lecture ‘The Language of Bullshit Language – Big Tech's Promises on AI Regulation’ at
+                            Paris Lodron University Salzburg and TU Vienna in the courses ‘Quantified Self’ and
+                            ‘Critical Theory of Media and Informatics’
+                        </li>
+                        <li>Guest lecture ‘AI in Education’ at TU Vienna in the course ‘Critical Theory of Media and
+                            Informatics’
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 max-w-7xl">
+                <h3 class="text-eyeGreen dark:text-white text-2xl mb-6">Even more CV</h3>
+                <p class="dark:text-white">The table and list above comprise my academic CV; for anyone interested in my other projects,
+                    coding skills or former jobs, a <a href="./documents/CV_Konstantin_Lackner_2025.pdf" download
+                                                       class="text-eyeGreen hover:underline">full CV is available
+                        here.</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gameDesign" aria-label="game design section"
+             class="px-4 sm:px-6 pb-20 scroll-mt-mobile-header sm:scroll-mt-desktop-header">
+        <div class="max-w-4xl mx-auto text-left">
+            <h2 class="text-eGToEBStep1 dark:text-white text-4xl mb-6 text-left">Game Design</h2>
+            <p class="dark:text-white">Some of the games presented here were made in the course of game jams, some are university projects, some
+                are contract work. Many were made in cooperation with others, which I make sure to mention here.</p>
+            <div id="sliderWrapper" class="relative w-full max-w-7xl mx-auto overflow-hidden pt-8 select-none">
+                <!-- Slides container -->
+                <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slide 1 -->
+                    <div class="w-full px-4 flex-shrink-0 flex flex-col items-center text-left">
+                        <div class="flex flex-col items-center max-w-6xl px-4 sm:px-8 w-full sm:w-3/4">
+                            <h3 class="text-eGToEBStep1 text-xl">ZECK ATTACK</h3>
+                            <p class="dark:text-white">
+                                A simple browser jump&run game, created as contract work for Pfizer to promote their
+                                tick vaccination →
+                                <a href="https://pfizeraustria.itch.io/zeck-attack"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="text-eGToEBStep1 hover:underline">click here to play</a>
+                            </p>
+                            <img src="./img/ZeckAttack.png"
+                                 alt="screenshot of ZeckAttack page on Itch.io"
+                                 class="object-cover mt-4 select-none pointer-events-none"
+                                 draggable="false">
+                        </div>
+                    </div>
+
+
+                    <!-- Slide 2 -->
+                    <div class="w-full px-4 flex-shrink-0 flex flex-col items-center text-left">
+                        <div class="flex flex-col items-center w-full sm:w-3/4 max-w-6xl px-4 sm:px-8">
+                            <h3 class="text-eGToEBStep1 text-xl">Hausdurchsuchung</h3>
+                            <p class="dark:text-white">
+                                A political game created in the course of a university project, dealing with the house
+                                search at the Austrian Minister of Finance's home.</p>
+                            <p class="dark:text-white">→
+                                <a href="hausdurchsuchung.html"
+                                   rel="noopener noreferrer"
+                                   class="text-eGToEBStep1 hover:underline">click here to read more</a>
+                            </p>
+                            <a href="hausdurchsuchung.html"
+                               rel="noopener noreferrer"
+                               class="flex flex-col items-center dark:text-white">
+                                <img src="./img/HausDurchsuchungBanner.jpg"
+                                     alt="Logo of the Hausdurchsuchung game, showing the lettering as well as two characters from the game"
+                                     class="object-cover mt-4 select-none pointer-events-none w-full"
+                                     draggable="false">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full px-4 flex-shrink-0 flex flex-col items-center text-left">
+                        <div class="flex flex-col items-center w-full sm:w-3/4 max-w-6xl px-4 sm:px-8">
+                            <h3 class="text-eGToEBStep1 text-xl">Plan(See)Stadt</h3>
+                            <p class="dark:text-white">
+                                The aim of this card game was to familiarise players with urban planning. This goes hand
+                                in hand with various interests that are often inherently contradictory. A circumstance
+                                that was illustrated with role cards, which gave players specific tasks to fulfil,
+                                trying to facilitate putting oneself into different roles.</p>
+                            <p class="dark:text-white">→
+                                <a href="PlanSeeStadt.html"
+                                   rel="noopener noreferrer"
+                                   class="text-eGToEBStep1 hover:underline">click here to read more</a>
+                            </p>
+                            <a href="PlanSeeStadt.html"
+                               rel="noopener noreferrer"
+                               class="flex flex-col items-center dark:text-white">
+                                <img src="./img/PlanStadtEdited.jpg"
+                                     alt="showing the Plan(See)Stadt game cards layed out"
+                                     class="object-cover mt-4 select-none pointer-events-none w-full"
+                                     draggable="false">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full px-4 flex-shrink-0 flex flex-col items-center text-left">
+                        <div class="flex flex-col items-center w-full sm:w-3/4 max-w-6xl px-4 sm:px-8">
+                            <h3 class="text-eGToEBStep1 text-xl">WobotkaVR</h3>
+                            <p class="dark:text-white">
+                                A two-player asymmetrical VR PVP game, one player drops packages on the other player's
+                                porch. Yet another political game, some might say about the same political party as
+                                Hausdurchsuchung.</p>
+                            <p class="dark:text-white">→
+                                <a href="WobotkaVR.html"
+                                   rel="noopener noreferrer"
+                                   class="text-eGToEBStep1 hover:underline">click here to read more</a>
+                            </p>
+                            <a href="WobotkaVR.html"
+                               rel="noopener noreferrer"
+                               class="flex flex-col items-center dark:text-white">
+                                <img src="./img/WobotkaVR.PNG"
+                                     alt="screenshot from the WobotkaVR project showing the view of a player searching the dark with a searchlight"
+                                     class="object-cover mt-4 select-none pointer-events-none w-full"
+                                     draggable="false">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <div class="absolute inset-y-0 left-0 flex items-center sm:px-4">
+                    <button onclick="prevSlide()" class="text-4xl text-eGToEBStep1 hover:text-darkGreen">&lt;
+                    </button>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center sm:px-4">
+                    <button onclick="nextSlide()" class="text-4xl text-eGToEBStep1 hover:text-darkGreen">&gt;
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reflectionsOnAcademia" aria-label="reflections on academia section"
+             class="px-4 sm:px-6 pb-20 scroll-mt-mobile-header sm:scroll-mt-desktop-header">
+        <div class="flex flex-col max-w-4xl mx-auto text-left items-start">
+            <h2 class="text-eGToEBStep2 dark:text-white text-4xl mb-6 text-left">Reflections on Academia</h2>
+            <p class="dark:text-white">
+                Throughout my PhD journey, I irregularly draw comics on my experience in Academia.
+                These comics don’t reflect my current interests, ideas, opinion or even looks (e.g. I do wear glasses
+                now). They are mere snapshots of what was going on in my head while at the stage of my PhD I was at when
+                drawing them. Also, most likely, non of my coworkers or public figures that I depict in the comics are
+                socks.
+            </p>
+            <p class="dark:text-white">
+                They are sorted most recent to I barely remember what I was trying to say.
+            </p>
+            <a href="SockPuppetScience.html" class="w-full flex flex-col justify-center items-center">
+                <img src="./img/sockComicTeaser.png" alt="teaser image for the sock comics"
+                     class="h-80 w-80 mt-12 mx-12 border-4 border-black">
+                <p class="text-eGToEBStep2 hover:underline">
+                    Click here to see the comics
+                </p>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" aria-label="contact section"
+             class="px-4 sm:px-6 pb-20 scroll-mt-mobile-header sm:scroll-mt-desktop-header">
+        <div class="flex flex-col max-w-4xl mx-auto text-left items-start w-full">
+            <h2 class="text-eyeBlue dark:text-white text-4xl mb-6 text-left">Contact</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-start w-full">
+                <img src="./img/Konstantin_closer.png" alt="Konstantin Lackner's face" class="w-64">
+                <div class="sm:pl-3 pt-8 sm:pt-0">
+                    <p class="dark:text-white">
+                        Reach out to me if you'd like to discuss my research projects – past or future – or want to
+                        collaborate on something new. I'm also available to supervise student projects, Bachelor's or
+                        Master's theses at the University of Kassel.
+                        <br>
+                        If you're looking for someone to develop a video game or a website such as this one, on a
+                        contract basis, feel free to get in touch – I'd be happy to see if I'm available within your
+                        timeframe.
+                    </p>
+                    <br>
+                    <p class="dark:text-white">Email: <a class="text-eyeBlue hover:underline"
+                                 href="mailto:konstantin.lackner@uni-kassel.de">konstantin.lackner@uni-kassel.de</a></p>
+                    <p class="dark:text-white">LinkedIn: <a class="text-eyeBlue hover:underline"
+                                    href="https://www.linkedin.com/in/konstantin-lackner-817122221/"
+                                    target="_blank"
+                                    rel="noopener noreferrer">Konstantin Lackner</a></p>
+                    <p class="dark:text-white">GitHub: <a class="text-eyeBlue hover:underline"
+                                  href="https://github.com/KonstantinLackner"
+                                  target="_blank"
+                                  rel="noopener noreferrer">KonstantinLackner</a></p>
+                    <p class="dark:text-white">itch.io: <a class="text-eyeBlue hover:underline"
+                                   href="https://konstantinlackner.itch.io/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">konstantinlackner</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue w-full h-40 p-4 flex items-center justify-center">
+    <div class="flex flex-col justify-between items-start text-white text-left w-96">
+        <p>This website was created with <a href="https://tailwindcss.com/" class="hover:underline">tailwindcss</a> and
+            <a
+                    href="https://alpinejs.dev/" class="hover:underline">Alpine.js</a>
+        and is hosted on <a href="https://pages.github.com/" class="hover:underline">GitHub Pages</a></p>
+        <p>Email: <a class="text-lightBlue hover:underline"
+                     href="mailto:konstantin.lackner@uni-kassel.de">konstantin.lackner@uni-kassel.de</a></p>
+    </div>
+</footer>
+</body>
+
+</html>

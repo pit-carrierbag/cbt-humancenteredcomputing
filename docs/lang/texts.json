@@ -1,0 +1,14 @@
+{
+    "de": {
+        "test_test": "Hallo Welt!",
+        "lang_button_de": "Deutsch",
+        "lang_button_en": "Englisch",
+        "loading": "Lädt..."
+    },
+    "en": {
+        "test_test": "Hello World!",
+        "lang_button_de": "German",
+        "lang_button_en": "English",
+        "loading": "Loading..."
+    }
+}

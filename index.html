@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Konstantin Lackner</title>
+    <link href="./src/input.css" rel="stylesheet">
+    <link href="./img/favicon.png" rel="icon">
+    <script src="./src/main.js" type="module"></script>
+</head>
+
+<body class="bg-white text-center">
+
+<!-- MOBILE: Burger menu -->
+<header
+        :class="{'h-full':open, 'bg-gradient-to-r from-blue/20 via-green/20 to-white/20 backdrop-blur-sm drop-shadow-md text-black':(scrolled||open)}"
+        class="block sm:hidden fixed top-0 left-0 w-full z-50 transition-colors duration-700"
+        x-data="{ scrolled: false, open: false }"
+        x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 0 })"
+>
+    <div class="flex items-center h-mobile-header justify-end">
+        <div class="relative">
+            <button @click="open = !open"
+                    aria-label="opens the burger menu for mobile navigation"
+                    class="flex justify-center rounded focus:outline-none px-2">
+                <svg
+                        :class="(scrolled || open) ? 'stroke-black' : 'stroke-white'"
+                        class="w-8 h-8 transition-colors duration-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path :class="{'rotate-48 -translate-x-1 translate-y-1': open, 'translate-y-0': !open}"
+                          class="transition-transform transform origin-center"
+                          d="M4 6h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    <path :class="{'opacity-0': open, 'opacity-100': !open}"
+                          class="transition-opacity"
+                          d="M4 12h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    <path :class="{'-rotate-48 -translate-x-1 -translate-y-1': open, 'translate-y-0': !open}"
+                          class="transition-transform transform origin-center"
+                          d="M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </svg>
+            </button>
+
+            <!-- Slide-in menu (fixed below header) -->
+            <div
+                    :class="open ? 'translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'"
+                    aria-hidden="!open"
+                    class="fixed flex flex-col items-start justify-start text-left right-0 top-mobile-header py-4 px-2 w-screen h-[calc(100vh-3rem)] transition-all duration-300 z-60
+                    font-bold will-change-transform"
+            >
+                <div class="text-center w-full text-3xl font-medium text-black">
+                    <a @click="open = false" class="block px-4 py-4 text-left" href="#services">Services</a>
+                    <a @click="open = false" class="block px-4 py-4 text-left" href="#work">Work</a>
+                    <a @click="open = false" class="block px-4 py-4 text-left" href="#about">About</a>
+                    <a @click="open = false" class="block px-4 py-4 text-left"
+                       href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- DESKTOP: Full nav -->
+<header
+        :class="(scrolled)
+    ? 'bg-gradient-to-r from-blue/20 via-green/20 to-white/20 backdrop-blur-sm drop-shadow-md text-black'
+    : 'bg-transparent text-white'"
+        class="hidden sm:block px-8 sm:px-10 md:px-16 lg:px-20 xl:px-52  fixed top-0 left-0 w-full z-50 transition-colors duration-700"
+        x-data="{ scrolled: false}"
+        x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 0 })"
+>
+    <nav class="flex justify-between items-center h-desktop-header max-w-xl md:max-w-7xl mx-auto text-lg lg:text-xl">
+        <!-- Inline SVG Logo (keeps using currentColor) -->
+        <svg class="w-auto h-8 transition-colors duration-700" fill="currentColor"
+             viewBox="0 0 831.7 830.8" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-auto h-8 transition-colors duration-700" fill="currentColor"
+                 viewBox="0 0 831.7 830.8" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="201" cy="349.3" fill="none" r="176.2" stroke="currentColor" stroke-width="20"/>
+                <circle cx="606.6" cy="342.2" fill="none" r="190.2" stroke="currentColor" stroke-width="20"/>
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="20" x1="324.7" x2="455.2" y1="223.8"
+                      y2="223.8"/>
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="20" x1="143.7" x2="652.1" y1="649.6"
+                      y2="682.8"/>
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="20" x1="143.7" x2="143.7" y1="519.4"
+                      y2="649.6"/>
+                <path d="M715,502.1l-69.5,23.6v165.5c0,1.1,7.4,1.9,8.4,1.7l47.2-8.8c6.5-1.2,11.3-6.9,11.4-13.5l2.5-168.4Z"
+                      stroke="currentColor" stroke-width="20"/>
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="20" x1="697.9" x2="786" y1="648.2"
+                      y2="614.7"/>
+                <line stroke="currentColor" stroke-linecap="round" stroke-width="20" x1="789.5" x2="786" y1="394.9"
+                      y2="614.7"/>
+                <ellipse cx="427" cy="687.9" rx="26.7" ry="179.6" stroke="currentColor"
+                         stroke-width="20" transform="translate(-274.4 1092.3) rotate(-88.1)"/>
+                <path d="M602,526.8c-135.3-2.4-270.6-4.9-405.9-7.3,1.2,12.8,3.2,27,6.3,42.2,3.1,15.3,6.9,29.2,10.8,41.5,0,.4.3,1.8,1.5,2.9.8.7,1.8,1.2,2.9,1.3l373.7,23.8c5.8.4,10.7-4.5,10.7-10.6v-93.7Z"
+                      fill="currentColor"/>
+                <path d="M426.6,284.7h-59.6c5.4,18.1,19.1,72.3-5.6,133.6-32.4,80.5-106,111.7-119.8,117.2,106.2,1.8,212.4,3.5,318.7,5.3-22.4-10.7-59.8-32.5-90.3-73.1-57.8-77-46.6-162.8-43.4-183Z"
+                      fill="currentColor"/>
+                <path d="M324.7,223.8c-28.1-4.8-92.9-12-167.1,16.6-71,27.4-113.4,73.2-131.4,95.3-.7,13.4-.1,35,8.2,59.9,7.9,23.7,19.6,40.8,27.9,51,4.5-15.6,26.3-85.3,96.6-124.6,102.3-57.1,208.7,4.9,213,7.5-3.7-16-9.5-35.4-19.1-56.5-9.1-20-19.2-36.4-28.3-49.2Z"
+                      fill="currentColor"/>
+                <path d="M358.7,302.6c-46.3,7.6-108.1,22.8-175.7,54.5-56.2,26.4-100.4,56.7-133.1,82.8,23,21,46.1,41.9,69.1,62.9,32.2-1.3,71.1-5.7,113.9-16.7,71.1-18.2,126.2-47.4,163.7-71.5-12.6-37.3-25.2-74.7-37.9-112Z"
+                      fill="currentColor"/>
+                <path d="M797.5,304.5c-22-22.4-75.3-70.5-159.9-92.3-81-20.8-148.1-6.5-178.3,2-9.2,11.7-22.5,31.7-31,59.5-8.1,26.6-8.6,49.6-7.7,64.2,101.3-52.9,213-52.2,286.5,4.8,34.5,26.7,53.9,60.7,65.1,88,6.9-16.8,14.2-38.2,19.1-63.4,4.7-23.9,6.2-45.3,6.2-62.8Z"
+                      fill="currentColor"/>
+                <path d="M784.5,397.2c-48.2-21.7-115.7-46.7-199.2-61.9-69.4-12.6-130.1-14.8-177.4-13.5,6.8,35.1,13.7,70.1,20.5,105.2,31.5,15.3,72.2,31.4,121.3,42.1,82.2,18,152.8,13.2,199.5,6,11.8-25.9,23.5-51.9,35.3-77.8Z"
+                      fill="currentColor"/>
+            </svg>
+        </svg>
+
+        <div class="justify-between">
+            <a class="px-7 hover:text-black" href="#services">Services</a>
+            <a class="px-7 hover:text-black" href="#work">Work</a>
+            <a class="px-7 hover:text-black" href="#about">About</a>
+            <a class="px-7 hover:text-black" href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+
+<section aria-label="greeting message" class="h-[calc(100vh/2)]">
+    <div class="bg-gradient-to-br from-blue via-green to-lightGreen/50 h-full">
+        <div class="px-8 sm:px-10 md:px-16 lg:px-20 xl:px-52 flex flex-row justify-between h-full">
+            <!-- Text area -->
+            <div class="flex flex-col justify-center">
+                <h1 class="text-7xl xl:text-9xl font-thin text-white text-left ">crogs</h1>
+                <p class="text-lg xl:text-3xl font-light text-white text-left px-1">
+                    Viennese development
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<main>
+    <section aria-label="spacer" class="flex h-mobile-header-spacer sm:h-desktop-header-spacer"></section>
+    <section aria-label="research section" class="sm:scroll-mt-desktop-header" id="research">
+        <div class="px-8 sm:px-10 md:px-16 lg:px-20 xl:px-52 text-left">
+            <h2 class="text-black text-4xl mb-6 text-left">what we do</h2>
+            <p class="w-full text-black">
+                We build fast, lightweight, and dynamic websites that work smoothly on any device. Alongside web design,
+                we also offer professional photography to give your online presence a cohesive and polished look.
+                Everything comes as simple, transparent packages, so you get everything you need in one place.
+            </p>
+            <h2 class="text-black text-4xl mb-6 text-left">how we do that</h2>
+            <p class="w-full text-black">
+                We’re a small team of four computer science students based in Vienna — two PhDs and two Master’s
+                students. We work fast, keep things simple, and focus on clean, no-nonsense websites that do exactly
+                what you need at a fair price, without unnecessary bloat.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gradient-to-r from-eyeGreen to-eyeBlue dark:from-darkGreen dark:to-darkBlue w-full h-40 p-4 flex items-center justify-center">
+    <div class="flex flex-col justify-between items-start text-white text-left w-96">
+        <p>This website was created with <a class="hover:underline" href="https://tailwindcss.com/">tailwindcss</a> and
+            <a
+                    class="hover:underline" href="https://alpinejs.dev/">Alpine.js</a>
+            and is hosted on <a class="hover:underline" href="https://pages.github.com/">GitHub Pages</a></p>
+        <p>Email: <a class="text-lightBlue hover:underline"
+                     href="mailto:konstantin.lackner@uni-kassel.de">konstantin.lackner@uni-kassel.de</a></p>
+    </div>
+</footer>
+</body>
+
+</html>
