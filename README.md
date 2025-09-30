@@ -1,1 +1,1 @@
-# Website for the Carrier Bag of Computing Workshop
+# Website for the Carrier Bag of Human-Centered Computing Workshop
