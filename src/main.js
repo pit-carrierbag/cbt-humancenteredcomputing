@@ -83,3 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // Initialise Alpine after everything
 await Alpine.store('langSwitcher').loadTexts();
 Alpine.start();
+
+if (window.location.hash) {
+    setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 200);
+}
