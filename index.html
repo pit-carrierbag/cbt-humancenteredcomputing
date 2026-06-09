@@ -14,7 +14,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-1.5 p-1.5">
 
         <!-- The Bag -->
-        <div @click="flipped = !flipped" :class="flipped ? 'sm:col-span-2 sm:aspect-[2/1]' : 'col-span-1 aspect-square'"  class="flex items-center justify-center"
+        <div :class="flipped ? 'sm:col-span-2 sm:aspect-[2/1]' : 'col-span-1 aspect-square'" @click="flipped = !flipped"
+             class="flex items-center justify-center"
              x-data="{ flipped: false }">
 
             <!-- Front -->
@@ -33,10 +34,10 @@
                 <div class=" flex w-[95%] border-pastelYellow border-4 border-dashed rounded-xl items-center text-start">
                     <p class="p-4 font-bold text-[2rem] sm:text-[0.7rem] md:text-[0.9rem] lg:text-[1.3rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-pastelBlueExtraLight pointer-events-none select-none">
                         <i>“If, however, one avoids the linear, progressive, Time’s-(killing)- arrow mode of the
-                        Techno-Heroic, and redefines technology and science as primarily cultural carrier bag
-                        rather than weapon of domination, one pleasant side effect is that science fiction can
-                        be seen as a far less rigid, narrow field, not necessarily Promethean or apocalyptic at
-                        all, and in fact less a mythological genre than a realistic one.”</i><br>
+                            Techno-Heroic, and redefines technology and science as primarily cultural carrier bag
+                            rather than weapon of domination, one pleasant side effect is that science fiction can
+                            be seen as a far less rigid, narrow field, not necessarily Promethean or apocalyptic at
+                            all, and in fact less a mythological genre than a realistic one.”</i><br>
                         - Ursula K. Le Guin in The Carrier Bag Theory of Fiction (1986)<br>
                         In her essay “The Carrier Bag Theory of Fiction” Ursula Le Guin critiques the
                         dominant mode of how science fiction stories are told as heroic killing stories
@@ -51,8 +52,6 @@
             </div>
         </div>
 
-        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
-
         <!-- Team -->
         <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
              x-data="{ flipped: false }">
@@ -62,7 +61,7 @@
                  x-show="!flipped">
                 <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center justify-center text-center">
                     <p class="font-home  text-[7rem] sm:text-[3rem] md:text-[5rem] lg:text-[4rem] xl:text-[4.5rem] text-white pointer-events-none select-none">
-                        Team</p>
+                        TEAM</p>
                 </div>
             </div>
 
@@ -70,20 +69,20 @@
             <div class="w-full bg-pastelGreenDark aspect-square flex items-center justify-center rounded-sm"
                  x-show="flipped">
                 <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center text-start">
-                    <p class="p-4 font-bold text-[2rem] sm:text-[0.9rem] md:text-[1.2rem] lg:text-[1.8rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-white pointer-events-none select-none">
-                        Lea Stoeter,<br>
-                        Konstantin Lackner,<br>
-                        Goda Klumbyte,<br>
-                        Viktoria Horn,<br>
-                        Claude Draude,<br>
-                        Lisa Blaesing</p>
+                    <p class="p-4 font-bold text-[2rem] sm:text-[0.9rem] md:text-[1.2rem] lg:text-[1.8rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-white select-none">
+                        Viktoria Horn (University of Kassel, <a
+                            class="underline text-pastelRed hover:text-pastelRedDark"
+                            href="mailto:viktoria.horn@uni-kassel.de?subject=NordiCHI%20Workshop%20Shifting%20Stories%20Of%20Human%20Centred%20Computing%20Research&cc=l.stoter@uni-kassel.de,lisamarie.blaesing@uni-kassel.de,konstantin.lackner@uni-kassel.de,goda.klumbyte@plus.ac.at,goda.klumbyte@uni-kassel.de,claude.draude@uni-kassel.de">contact
+                        me</a><br>
+                        Lea Stöter (University of Kassel)<br>
+                        Lisa Marle Bläsing (University of Kassel<br>
+                        Konstantin Lackner (University of Kassel)<br>
+                        Goda Klumbyte (University of Kassel, Paris Lodron University Salzburg)<br>
+                        Claude Draude (University of Kassel)
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
 
         <!-- Where & When -->
         <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
@@ -103,15 +102,16 @@
             <div class="w-full bg-pastelPurpleLight aspect-square flex items-center justify-center rounded-sm"
                  x-show="flipped">
                 <div class="flex w-[95%] aspect-square border-pastelRed border-4 border-dashed rounded-xl items-center text-start">
-                    <p class="p-4 font-bold text-[2.5rem] text-pastelRedDark pointer-events-none select-none">
-                        Location and Timeslot</p>
+                    <p class="p-4 text-[2rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem] 2xl:text-[1.2rem] text-pastelRedDark select-none">
+                        <strong>Date</strong>: Saturday, 3rd of October, 9:30-17:30 (Full Day)<br>
+                        <strong>Venue</strong>: Academill building, Åbo Akademi University, Vaasa Campus, Vaasa<br>
+                        <strong>Address</strong>: <a class="underline text-pastelYellow hover:text-pastelRed" href="https://maps.app.goo.gl/EadBiNbTPy5ejrDV8" target="_blank">Åbo Akademi University, Rantakatu 2, 65100 Vaasa</a><br>
+                        Exact room to be updated in September</p>
                 </div>
             </div>
         </div>
 
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <!-- Join -->
+        <!-- Agenda -->
         <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
              x-data="{ flipped: false }">
 
@@ -120,7 +120,7 @@
                  x-show="!flipped">
                 <div class="flex w-[95%] aspect-square border-pastelBlueDark border-4 border-dashed rounded-xl items-center justify-center text-center">
                     <p class="font-dashed text-[8rem] sm:text-[5rem] md:text-[7rem] text-pastelBlueDark pointer-events-none select-none">
-                        Join</p>
+                        Agenda</p>
                 </div>
             </div>
 
@@ -128,88 +128,149 @@
             <div class="w-full bg-pastelBlueExtraLight aspect-square flex items-center justify-center rounded-sm"
                  x-show="flipped">
                 <div class="flex w-[95%] aspect-square border-pastelBlueDark border-4 border-dashed rounded-xl items-center text-center">
-                    <p class="p-4 font-bold text-[2.5rem] text-pastelBlueDark pointer-events-none select-none">Should
-                        be mailto</p>
+                    <table class="mx-auto items-center justify-center text-start text-[2rem] sm:text-[0.7rem] md:text-[0.5rem] lg:text-[0.6rem] xl:text-[0.65] 2xl:text-[0.75rem] 3xl:text-[1rem]">
+                            <tr class="border-b border-black">
+                                <th class="text-start p-2 border-r border-black">Time</th>
+                                <th class="text-start p-2">Activity</th>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">09.30 – 10.15</td>
+                                <td class="p-2">Arrival, welcome and introductions</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">10.15 – 11.00</td>
+                                <td class="p-2">Session 1: Input narrative analysis and Carrier Bag Theory of Fiction</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">11.00 – 11.30</td>
+                                <td class="p-2">Morning coffee break</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">11.30 – 13.00</td>
+                                <td class="p-2">Session 2: Group work – collective narrative analysis and presentations</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">13.00 – 14.00</td>
+                                <td class="p-2">Lunch break</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">14.00 – 15.30</td>
+                                <td class="p-2">Session 3: Shifting narratives through critical fabulation and speculative design</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">15.30 – 16.00</td>
+                                <td class="p-2">Afternoon coffee break</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">16.00 – 16.15</td>
+                                <td class="p-2">Personal reflection exercise</td>
+                            </tr>
+                            <tr class="border-b border-black">
+                                <td class="p-2 border-r border-black">16.15 – 17.15</td>
+                                <td class="p-2">Group discussion on commonalities, challenges and further steps</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border-r border-black">17.15 – 17.30</td>
+                                <td class="p-2">Workshop wrap-up</td>
+                            </tr>
+                            <tr>
+                                <td>* tentative, to be adjusted according to official break times</td>
+                            </tr>
+                    </table>
                 </div>
             </div>
         </div>
 
-        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden sm:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <div class="hidden 2xl:flex aspect-square items-center justify-center"></div>
-
-        <!-- About -->
-        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
-             x-data="{ flipped: false }">
-
+        <!-- Join -->
+        <div class="aspect-square flex items-center justify-center">
             <!-- Front -->
-            <div class="w-full pattern-cross pattern-pastelGreenDark pattern-bg-pastelYellow pattern-opacity-100 pattern-size-8 aspect-square flex items-center justify-center rounded-sm hover:opacity-90"
-                 x-show="!flipped">
+            <a href="#cfp" class="w-full pattern-cross pattern-pastelGreenDark pattern-bg-pastelYellow pattern-opacity-100 pattern-size-8 aspect-square flex items-center justify-center rounded-sm hover:opacity-90">
                 <div class="flex w-[95%] aspect-square border-white border-4 border-dashed rounded-xl items-center justify-center text-center">
                     <p class="font-needle text-[6.5rem] sm:text-[3.5rem] md:text-[4.5rem] text-pastelRed pointer-events-none select-none">
-                        About</p>
+                        Join</p>
                 </div>
-            </div>
-
-            <!-- Back -->
-            <div class="w-full bg-pastelYellow aspect-square flex items-center justify-center rounded-sm"
-                 x-show="flipped">
-                <div class="flex w-[95%] aspect-square border-white border-4 border-dashed rounded-xl items-center text-start">
-                    <p class="p-4 font-bold text-[1.5rem] text-pastelRed pointer-events-none select-none">
-                        Particpatory IT Design,<br>
-                        University of Kassel,<br>
-                        Germany</p>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
-    
-    <div id="cfp" class="max-w-5xl mx-auto min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-12 text-left space-y-4">
-        <h1 class="text-xl">NordiCHI WS "Shifting Stories of Human-Centred Computing Research" – Call for Participation</h1>
+
+    <div class="max-w-5xl mx-auto min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-12 text-left space-y-4"
+         id="cfp">
+        <h1 class="text-xl text-pastelRed font-semibold">NordiCHI WS "Shifting Stories of Human-Centred Computing Research" – Call for
+            Participation</h1>
         <p>
-            In their essay "The Carrier Bag Theory of Fiction", Ursula K. Le Guin (1986) critiques how stories of science fiction and technology are predominantly told as stories of heroic undertakings, not as stories about everyday life, advocating to shift our focus to the mundane and worldly aspects of life.
+            In their essay "The Carrier Bag Theory of Fiction", Ursula K. Le Guin (1986) critiques how stories of
+            science fiction and technology are predominantly told as stories of heroic undertakings, not as stories
+            about everyday life, advocating to shift our focus to the mundane and worldly aspects of life.
         </p>
         <p>
-            Based on Le Guin's call for more stories of everyday life, we invite participants to engage with their own research and their discipline through the lens of The Carrier Bag Theory of Fiction. By focusing on the narrative aspects of HCI research practices we won't merely look at the presentation of research results but also on how general narratives inform the design of technology and how research is approached, as well as problem definitions and technology development in general. This means mapping story aspects of computing narratives and related concepts to ask what assumptions, socio-technical implications, and material consequences they bring with them.
+            Based on Le Guin's call for more stories of everyday life, we invite participants to engage with their own
+            research and their discipline through the lens of The Carrier Bag Theory of Fiction. By focusing on the
+            narrative aspects of HCI research practices we won't merely look at the presentation of research results but
+            also on how general narratives inform the design of technology and how research is approached, as well as
+            problem definitions and technology development in general. This means mapping story aspects of computing
+            narratives and related concepts to ask what assumptions, socio-technical implications, and material
+            consequences they bring with them.
         </p>
         <p>
-            Drawing on methods from critical fabulation and speculative design, we aim to enable participants to critically reflect on their current research practices and how they are shaped by dominant narratives of their field, and collectively work on shifting perspectives on participants' own research, speculating on how else their stories could be told. The workshop contains a mixture of input, narrative analysis, reflection, and speculative design activities.
+            Drawing on methods from critical fabulation and speculative design, we aim to enable participants to
+            critically reflect on their current research practices and how they are shaped by dominant narratives of
+            their field, and collectively work on shifting perspectives on participants' own research, speculating on
+            how else their stories could be told. The workshop contains a mixture of input, narrative analysis,
+            reflection, and speculative design activities.<br>
+            <br>
+            Participants are asked to prepare for the workshop in the following ways:
         </p>
-        <p>Participants are asked to prepare for the workshop in the following ways:</p>
         <ul class="list-disc pl-6 space-y-2">
-            <li> Reading Ursula K. Le Guin's essay "The Carrier Bag Theory of Fiction" as the basis for the workshop</li>
-            <li> Submitting a position paper with a personal reflection on the narratives within their own disciplinary home (more details below)</li>
-            <li> Bringing a piece of their own research (paper, proposal, presentation slides, etc.) as a use case for a critical fabulation exercise</li>
+            <li> Reading Ursula K. Le Guin's essay "The Carrier Bag Theory of Fiction" as the basis for the workshop
+            </li>
+            <li> Submitting a position paper with a personal reflection on the narratives within their own disciplinary
+                home (more details below)
+            </li>
+            <li> Bringing a piece of their own research (paper, proposal, presentation slides, etc.) as a use case for a
+                critical fabulation exercise
+            </li>
         </ul>
         <p>
-            We call on potential participants to share a short position paper (1000–1500 words) to engage with their research and disciplinary positioning through a story-telling perspective. Participants should reflect on the narratives involved in their research, and on the dominant narrative lines that shape their specific field of study, method or technology in question. Overall, the position paper should address the following questions:
+            We call on potential participants to share a short position paper (1000–1500 words) to engage with their
+            research and disciplinary positioning through a story-telling perspective. Participants should reflect on
+            the narratives involved in their research, and on the dominant narrative lines that shape their specific
+            field of study, method or technology in question. Overall, the position paper should address the following
+            questions:
         </p>
         <ol class="list-decimal pl-6 space-y-2">
-            <li> What are dominant or recurring narrative positions, elements, or lines that you encounter during your engagement with the field?</li>
-            <li> How is your technology artifact repeatedly presented in your field? In your research but also in research of others?</li>
-            <li> What motivates you to engage with the narrative aspects of your research? How do narratives influence your research and shape how you approach your research?</li>
-            <li> What would you like to be done differently? Where do you see narrative aspects that can be improved, e.g. the way a certain perspective is presented?</li>
+            <li> What are dominant or recurring narrative positions, elements, or lines that you encounter during your
+                engagement with the field? How is your technology artifact repeatedly presented in your field? In your research but also in
+                research of others?
+            </li>
+            <li> What motivates you to engage with the narrative aspects of your research? How do narratives influence
+                your research and shape how you approach your research?
+            </li>
+            <li> What would you like to be done differently? Where do you see narrative aspects that can be improved,
+                e.g. the way a certain perspective is presented?
+            </li>
         </ol>
         <p>
-            We want to specifically encourage early-career researchers with an interest in addressing computing from a post-disciplinary perspective, who want to re-assess their research endeavours from a narrative perspective, to participate in this workshop. Still, this call for participation is open to all HCI researchers interested in the stories surrounding their own work and technology in general.
+            We want to specifically encourage early-career researchers with an interest in addressing computing from a
+            post-disciplinary perspective, who want to re-assess their research endeavours from a narrative perspective,
+            to participate in this workshop. Still, this call for participation is open to all HCI researchers
+            interested in the stories surrounding their own work and technology in general.
         </p>
         <p>
-            Position papers should be submitted via email until <strong>DEADLINE</strong>. The organising team will lightly review the position papers and choose participants based on their motivation for applying, as well as the fit of their research interests as laid out in the position paper and reflection. Potential participants will be notified by <strong>SET DATE</strong>.
+            Position papers should be submitted via <a href="mailto:viktoria.horn@uni-kassel.de?subject=NordiCHI%20Workshop%20Position%20Paper%20Submission%20Shifting%20Stories%20Of%20Human%20Centred%20Computing%20Research&cc=l.stoter@uni-kassel.de,lisamarie.blaesing@uni-kassel.de,konstantin.lackner@uni-kassel.de,goda.klumbyte@plus.ac.at,goda.klumbyte@uni-kassel.de,claude.draude@uni-kassel.de" class=" underline font-bold text-pastelRed hover:text-black">EMAIL</a> until <strong>26.07.2026 AoE</strong>. The organising team will
+            lightly review the position papers and choose participants based on their motivation for applying, as well
+            as the fit of their research interests as laid out in the position paper and reflection. Potential
+            participants will be notified by <strong>07.08.2026 AoE</strong>.
         </p>
         <p>
-            Please note that the position papers function as personal reflection and selection modality and will not be published.
+            Please note that the position papers function as personal reflection and selection modality and will not be
+            published.<br>
+            <br>
+
+            <strong>Important Dates:</strong><br>
+            Deadline for Position Papers: 26.07.2026 AoE<br>
+            Notification of Acceptance: 07.08.2026 AoE<br>
+            Early Bird Registration NordiCHI 2026: 14.08.2026 (tentative)<br>
+            Workshop scheduled: Saturday, 03.10.2026, 9:30-17:30
         </p>
     </div>
 </main>
