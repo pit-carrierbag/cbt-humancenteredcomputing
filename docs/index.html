@@ -5,16 +5,16 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Carrier Bag of HCI Workshop</title>
     <link href="./img/favicon.png" rel="icon">
-  <script type="module" crossorigin src="./assets/index-C7nQ0mVb.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D_36Ko66.css">
+  <script type="module" crossorigin src="./assets/index-De4ypLz0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Brw8cdZF.css">
 </head>
 
 <body>
 <main class="pattern-vertical-lines pattern-white pattern-bg-offWhite pattern-opacity-100 bg-offWhite pattern-size-4 min-h-screen">
-    <div class="grid grid-cols-1 sm:grid-cols-3 2xl:grid-cols-6 gap-1.5 p-1.5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-1.5 p-1.5">
 
         <!-- The Bag -->
-        <div @click="flipped = !flipped" class="aspect-square flex items-center justify-center"
+        <div @click="flipped = !flipped" :class="flipped ? 'sm:col-span-2 sm:aspect-[2/1]' : 'col-span-1 aspect-square'"  class="flex items-center justify-center"
              x-data="{ flipped: false }">
 
             <!-- Front -->
@@ -28,12 +28,24 @@
             </div>
 
             <!-- Back -->
-            <div class="w-full bg-pastelRedDark aspect-square flex items-center justify-center rounded-sm"
+            <div class="w-full h-full bg-pastelRedDark flex items-center justify-center rounded-sm"
                  x-show="flipped">
-                <div class="flex w-[95%] aspect-square border-pastelYellow border-4 border-dashed rounded-xl items-center text-start">
-                    <p class="p-4 font-bold text-[2rem] sm:text-[0.9rem] md:text-[1.2rem] lg:text-[1.8rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-pastelBlueExtraLight pointer-events-none select-none">
-                        Drawing on Le Guin, we offer a Carrier Bag Theory of HCI as a figuration for a slow disciplinary
-                        reorientation.
+                <div class=" flex w-[95%] border-pastelYellow border-4 border-dashed rounded-xl items-center text-start">
+                    <p class="p-4 font-bold text-[2rem] sm:text-[0.7rem] md:text-[0.9rem] lg:text-[1.3rem] 2xl:text-[1.2rem] min-[2350px]:text-[2rem] text-pastelBlueExtraLight pointer-events-none select-none">
+                        <i>“If, however, one avoids the linear, progressive, Time’s-(killing)- arrow mode of the
+                        Techno-Heroic, and redefines technology and science as primarily cultural carrier bag
+                        rather than weapon of domination, one pleasant side effect is that science fiction can
+                        be seen as a far less rigid, narrow field, not necessarily Promethean or apocalyptic at
+                        all, and in fact less a mythological genre than a realistic one.”</i><br>
+                        - Ursula K. Le Guin in The Carrier Bag Theory of Fiction (1986)<br>
+                        In her essay “The Carrier Bag Theory of Fiction” Ursula Le Guin critiques the
+                        dominant mode of how science fiction stories are told as heroic killing stories
+                        neglecting the mundane aspects of life stories. We use Le Guins analysis of science
+                        fiction literature as a starting point, inspiration, and analytical lens for our workshop,
+                        which seeks to bring together researchers who are interested in the narratives that
+                        shape human-centred computing research.
+                        Thereby, we aim to enable participants to critically reflect on their current research
+                        practices and how they are shaped by dominant narratives of their field..
                     </p>
                 </div>
             </div>
